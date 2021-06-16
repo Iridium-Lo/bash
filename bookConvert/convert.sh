@@ -6,7 +6,7 @@ cats=`ls $pdfDir`
 
 for i in `echo "$cats"`; do  
    [ ! -d $epubDir/$i ]  && 
-      mkdir $epubDir/$i   
+      mkdir -p $epubDir/$i   
 done
 
 for i in `echo "$cats"`; do pushd $pdfDir/$i
