@@ -35,7 +35,7 @@ These are all tedious problems
 
 Have your pdf folder setup like this:
 
-`Books/<individual categories>/<pdf files for each category>
+`Books/<individual categories>/<pdf files for each category>`
 
 skip the below if you have your pdf folder on machine:
 
