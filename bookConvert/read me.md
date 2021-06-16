@@ -1,9 +1,11 @@
 ## Calibre convert: pdf -> epub
 
 I download pdf books on my phone and have them organised by category
+
 I copied this file to my desktop from the phone
 
 Then to my horror some books would take 2 hours to convert 
+
 So I switched to the cmdline version of calibre after being suggested it
 
 ## GUI vs terminal
