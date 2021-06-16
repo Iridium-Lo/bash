@@ -14,7 +14,6 @@ tested with same book single conversion:
 
 - time GUI version: 1hr 36 mins
 - time terminal version: 34 mins
-- terminal is much faster 
 
 ### Terminal and GUI shortfalls
 
