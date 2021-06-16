@@ -13,7 +13,9 @@ for i in `echo "$cats"`; do pushd $pdfDir/$i
    for x in `ls *.pdf`; do 
       book=`echo "$x" | sed -e s/.pdf//g`
       [[ ! -f $epubDir/$i/$book.epub ]] &&
-         ebook-convert $book.pdf $epubDir/$i/$book.epub
+         ebook-convert $book.pdf   \
+            $epubDir/$i/$book.epub \
+            > /dev/null
          tput setaf 2 
          echo "$book.epub -> done"
          tput sgr0
