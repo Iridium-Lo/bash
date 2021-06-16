@@ -2,7 +2,7 @@
 
 I download pdf books on my phone and have them organised by category
 
-I copied this file to my desktop from the phone
+I copied this file to my desktop from my phone
 
 Then to my horror some books would take 2 hours to convert 
 
