@@ -46,6 +46,8 @@ skip the below if you have your pdf folder on machine:
 ### Notes 
 pdf dir and epub dir are both on the desktop 
 so you can drag and drop the epub dir to your files app
+
 Can't seem to drag and drop to iphone from other locations
+
 Then you can open it in `books`
 
