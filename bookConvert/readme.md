@@ -31,6 +31,10 @@ These are all tedious problems
 - does this sequentially to improve performance
 - only converts books that haven't been converted
 
+### Output:
+
+![title](https://github.com/Iridium-Lo/bash/blob/master/bookConvert/img/image.png)
+
 ## How to use 
 
 Have your pdf folder setup like this:
@@ -50,4 +54,7 @@ so you can drag and drop the epub dir to your files app
 Can't seem to drag and drop to iphone from other locations
 
 Then you can open it in `books`
+ 
+use the following cmd to stop your mac from sleeping or screen locking (scripts don't run):
 
+`caffeinate -dimsu`
