@@ -28,7 +28,7 @@ skip the below if you have your pdf folder on machine:
 - connect device to machine
 - I'm using a Mac so I go to: `iphone> files> Books`
 - then drag and drop to: `~/Desktop` 
-- make sure the folder folder dragged is name: `Books`
+- make sure the folder dragged is named: `Books`
 
 for `~/Desktop/books` each category should contain the pdfs:
 
