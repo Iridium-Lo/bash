@@ -4,7 +4,7 @@ epubDir=~/Desktop/epubs
 
 cats=`ls $pdfDir`
 
-colo(){ tput setaf $1; }
+colo() { tput setaf $1; }
 
 output() {
  colo $1
