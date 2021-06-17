@@ -22,6 +22,11 @@ updateCats() {
    mkdir -p $epubDir/$1
  }
 
+strip() {
+  echo "$1" | \
+  sed -e s#.pdf##g
+ }
+
 convert() {
   if [ ! -f $epubDir/$2/"$1".epub ]; then
       output 5 "$1" '...'
@@ -40,7 +45,7 @@ for i in `ls $pdfDir`; do
    colo 7 
    echo -e "\n[$i]"
    for x in `ls *.pdf`; do
-      book=`echo "$x" | sed -e s/.pdf//g`
+      book=`strip "$x"`
       convert "$book" $i    &&   \
       output 2 "$book" '-'  ||   \
       output 6 "$book" '->'
