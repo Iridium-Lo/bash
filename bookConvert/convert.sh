@@ -1,7 +1,6 @@
 IFS=$'\n'
 pdfDir=~/Desktop/Books
 epubDir=~/Desktop/epubs
-cats=`ls $pdfDir`
 appDir=/Applications/calibre.app
 
 isCalibre() {
@@ -35,7 +34,7 @@ convert() {
 isCalibre 
 export PATH=$appDir/Contents/MacOS:$PATH
 
-for i in `echo "$cats"`; do 
+for i in `ls $pdfDir`; do 
    updateCats $i
    cd $pdfDir/$i
    colo 7 
