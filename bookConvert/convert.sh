@@ -1,7 +1,6 @@
 IFS=$'\n'
 pdfDir=~/Desktop/Books
 epubDir=~/Desktop/epubs
-
 cats=`ls $pdfDir`
 
 colo() { tput setaf $1; }
