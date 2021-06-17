@@ -21,8 +21,7 @@ tested with same book single conversion:
 - does this sequentially to improve performance
 - only converts books that haven't been converted
 
-
-## How to use 
+### How to use 
 
 skip the below if you have your pdf folder on machine:
 
