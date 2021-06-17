@@ -1,6 +1,6 @@
 IFS=$'\n'
-pdfDir=~/Desktop/Books
-epubDir=~/Desktop/epubs
+pdfDir=$HOME/Desktop/Books
+epubDir=$HOME/Desktop/epubs
 appDir=/Applications/calibre.app
 
 isCalibre() {
@@ -28,10 +28,10 @@ strip() {
  }
 
 convert() {
-  if [ ! -f $epubDir/$2/"$1".epub ]; then
+  if [ ! -f "$epubDir/$2/$1.epub" ]; then
       output 5 "$1" '...'
-      ebook-convert "$1".pdf \
-        epubDir/$2/"$1".epub \
+      ebook-convert "$1.pdf"  \
+        "$epubDir/$2/$1.epub" \
         > /dev/null 2>&1
   fi
  }
@@ -48,7 +48,6 @@ for i in `ls $pdfDir`; do
    for x in `ls *.pdf`; do
       book=`strip "$x"`
       convert "$book" $i   && \
-      output 2 "$book" '-' || \
       output 6 "$book" '->'
       cd - > /dev/null
    done
