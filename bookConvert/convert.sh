@@ -1,10 +1,9 @@
 IFS=$'\n'
 pdfDir=~/Desktop/Books
 epubDir=~/Desktop/epubs
-
 cats=`ls $pdfDir`
 
-colo(){ tput setaf $1; }
+colo() { tput setaf $1; }
 
 output() {
   colo $1
@@ -17,7 +16,7 @@ isCalibre() {
  }
 
 
-checkUpdateCats() {
+updateCats() {
   [ ! -d $epubDir/$1 ] &&
      mkdir -p $epubDir/$1
  }
@@ -32,7 +31,7 @@ convert() {
  }
 
 for i in `echo "$cats"`; do 
-   checkUpdateCats $i
+   updateCats $i
    cd $pdfDir/$i
    colo 7 
    echo -e "\n[$i]"
