@@ -4,24 +4,37 @@ epubDir=~/Desktop/epubs
 
 cats=`ls $pdfDir`
 
-for i in `echo "$cats"`; do
-   [ ! -d $epubDir/$i ] \
-   && mkdir -p $epubDir/$i
-done
+colo(){ tput setaf $1; }
+
+output() {
+ colo $1
+ echo "$3 $2.epub" 
+}
+
+checkUpdateCats() {
+  [ ! -d $epubDir/$1 ] &&
+     mkdir -p $epubDir/$1
+ }
+
+convert() {
+  if [ ! -f $epubDir/$2/"$1".epub ]; then 
+        output 5 "$1" '...'
+        ebook-convert "$1".pdf  \
+           epubDir/$2/"$1".epub \
+           > /dev/null 2>&1
+  fi
+ }
 
 for i in `echo "$cats"`; do 
+   checkUpdateCats $i
    cd $pdfDir/$i
-   tput setaf 7
+   colo 7 
    echo -e "\n[$i]"
-      for x in `ls *.pdf`; do 
-         book=`echo "$x" | sed -e s/.pdf//g`
-         [[ ! -f $epubDir/$i/$book.epub ]] \
-         && ebook-convert $book.pdf        \
-               epubDir/$i/$book.epub       \
-               > /dev/null 2>&1
-            tput setaf 2
-            echo "-> $book.epub"
-            tput sgr0
-            cd - > /dev/null
-      done
+   for x in `ls *.pdf`; do 
+      book=`echo "$x" | sed -e s/.pdf//g`
+      convert "$book" $i    &&   \
+      output 2 "$book" '-'  ||   \
+      output 6 "$book" '->'
+      cd - > /dev/null 
+   done
 done
