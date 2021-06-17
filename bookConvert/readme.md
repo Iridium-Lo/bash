@@ -57,12 +57,9 @@ Then:
 ![title](https://github.com/Iridium-Lo/bash/blob/master/bookConvert/img/image.png)
 
 #### Notes 
+
 pdf dir and epub dir are both on the desktop 
-so you can drag and drop the epub dir to your files app
-
-Can't seem to drag and drop to iphone from other locations
-
-Then you can open it in `books`
+so you can drag and drop the epub dir to your files app; can't seem to drag and drop to iphone from other locations
  
 use the following cmd to stop your mac from sleeping or screen locking (scripts don't run):
 
