@@ -46,8 +46,8 @@ for i in `ls $pdfDir`; do
    echo -e "\n[$i]"
    for x in `ls *.pdf`; do
       book=`strip "$x"`
-      convert "$book" $i    &&   \
-      output 2 "$book" '-'  ||   \
+      convert "$book" $i    && \
+      output 2 "$book" '-'  || \
       output 6 "$book" '->'
       cd - > /dev/null
    done
