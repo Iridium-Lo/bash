@@ -5,8 +5,8 @@ appDir=/Applications/calibre.app
 
 isCalibre() {
   if [ ! -d $appDir ]; then
-     echo 'install calibre and retry'
-     exit 1
+      echo 'install calibre and retry'
+      exit 1
   fi   
  }
 
@@ -19,15 +19,15 @@ output() {
 
 updateCats() {
   [ ! -d $epubDir/$1 ] &&
-     mkdir -p $epubDir/$1
+   mkdir -p $epubDir/$1
  }
 
 convert() {
   if [ ! -f $epubDir/$2/"$1".epub ]; then
-        output 5 "$1" '...'
-        ebook-convert "$1".pdf  \
-           epubDir/$2/"$1".epub \
-           > /dev/null 2>&1
+      output 5 "$1" '...'
+      ebook-convert "$1".pdf \
+        epubDir/$2/"$1".epub \
+        > /dev/null 2>&1
   fi
  }
 
