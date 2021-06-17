@@ -36,11 +36,11 @@ convert() {
   fi
  }
 
-isCalibre 
+isCalibre
 
 export PATH=$appDir/Contents/MacOS:$PATH
 
-for i in `ls $pdfDir`; do 
+for i in `ls $pdfDir`; do
    updateCats $i
    cd $pdfDir/$i
    colo 7 
