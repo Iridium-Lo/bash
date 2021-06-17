@@ -1,14 +1,6 @@
 ## Calibre convert: pdf -> epub
 
-I download pdf books on my phone and have them organised by category
-
-I copied this file to my desktop from my phone
-
-Then to my horror some books would take 2 hours to convert 
-
-So I switched to the cmdline version of calibre after being suggested it
-
-## GUI vs terminal
+### GUI vs terminal
 
 tested with same book single conversion:
 
@@ -21,8 +13,6 @@ tested with same book single conversion:
 - need to select each file
 - running in parallel severely reduces conversion speed 
 
-These are all tedious problems 
-
 ## What this script does 
 
 - creates the dir structure you have for categories
@@ -31,21 +21,42 @@ These are all tedious problems
 - does this sequentially to improve performance
 - only converts books that haven't been converted
 
-### Output:
-
-![title](https://github.com/Iridium-Lo/bash/blob/master/bookConvert/img/image.png)
 
 ## How to use 
 
-Have your pdf folder setup like this:
-
-`Books/<individual categories>/<pdf files for each category>`
 
 skip the below if you have your pdf folder on machine:
 
 - connect device to machine
-- I'm using a Mac so I go to: `iphone> files> epubs`
+- I'm using a Mac so I go to: `iphone> files> Books`
 - then drag and drop to: `~/Desktop` 
+- make sure the folder folder dragged is name: `Books`
+
+for `~/Desktop/books` each category should contain the pdfs:
+
+```
+  ├── biology
+  ├── chemistry
+  ├── computing
+  ├── culture
+  ├── enzymes
+  ├── lucid
+  ├── maths
+  ├── medicine
+  ├── neuroscience
+  ├── occult
+  ├── pharmacology
+  ├── physics
+  ├── psychiatry
+  └── religion
+```
+Then:
+
+`bash convert.sh`
+
+### Output:
+
+
 
 ### Notes 
 pdf dir and epub dir are both on the desktop 
