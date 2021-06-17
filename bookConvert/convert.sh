@@ -7,9 +7,15 @@ cats=`ls $pdfDir`
 colo(){ tput setaf $1; }
 
 output() {
- colo $1
- echo "$3 $2.epub" 
-}
+  colo $1
+  echo "$3 $2.epub" 
+ }
+
+isCalibre() {
+ if `which calibre`; then 
+    export PATH=
+ }
+
 
 checkUpdateCats() {
   [ ! -d $epubDir/$1 ] &&
