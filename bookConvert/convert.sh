@@ -4,18 +4,18 @@ epubDir=~/Desktop/epubs
 cats=`ls $pdfDir`
 appDir=/Applications/calibre.app
 
-colo() { tput setaf $1; }
-
-output() {
-  colo $1
-  echo "$3 $2.epub" 
- }
-
 isCalibre() {
   if [ ! -d $appDir ]; then
      echo 'install calibre and retry'
      exit 1
   fi   
+ }
+
+colo() { tput setaf $1; }
+
+output() {
+  colo $1
+  echo "$3 $2.epub" 
  }
 
 updateCats() {
