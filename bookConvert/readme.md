@@ -24,7 +24,6 @@ tested with same book single conversion:
 
 ## How to use 
 
-
 skip the below if you have your pdf folder on machine:
 
 - connect device to machine
@@ -56,9 +55,9 @@ Then:
 
 ### Output:
 
+![title](https://github.com/Iridium-Lo/bash/blob/master/bookConvert/img/image.png)
 
-
-### Notes 
+#### Notes 
 pdf dir and epub dir are both on the desktop 
 so you can drag and drop the epub dir to your files app
 
