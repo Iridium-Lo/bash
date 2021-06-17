@@ -11,7 +11,7 @@ output() {
  echo "$3 $2.epub" 
 }
 
-checkUpdateCats() {
+updateCats() {
   [ ! -d $epubDir/$1 ] &&
      mkdir -p $epubDir/$1
  }
@@ -26,7 +26,7 @@ convert() {
  }
 
 for i in `echo "$cats"`; do 
-   checkUpdateCats $i
+   updateCats $i
    cd $pdfDir/$i
    colo 7 
    echo -e "\n[$i]"
