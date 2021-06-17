@@ -37,6 +37,7 @@ convert() {
  }
 
 isCalibre 
+
 export PATH=$appDir/Contents/MacOS:$PATH
 
 for i in `ls $pdfDir`; do 
