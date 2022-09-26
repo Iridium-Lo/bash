@@ -4,10 +4,9 @@ epubDir=$HOME/Desktop/epubs
 appDir=/Applications/calibre.app
 
 isCalibre() {
-  if [ ! -d $appDir ]; then
-      echo 'install calibre and retry'
-      exit 1
-  fi   
+  [ ! -d $appDir ] &&
+   echo 'install calibre and retry'
+   exit 1
  }
 
 colo() { tput setaf $1; }
@@ -28,20 +27,21 @@ strip() {
  }
 
 convert() {
-  if [ ! -f "$epubDir/$2/$1.epub" ]; then
-      output 5 "$1" '...'
-      ebook-convert "$1.pdf"  \
-        "$epubDir/$2/$1.epub" \
-        > /dev/null 2>&1
-  fi
+  [ ! -f "$epubDir/$2/$1.epub" ] &&
+   output 5 "$1" '...' 
+   ebook-convert "$1.pdf"  \
+     "$epubDir/$2/$1.epub" \
+     > /dev/null 2>&1
  }
 
 isCalibre
 
+export -f updateCats
 export PATH=$appDir/Contents/MacOS:$PATH
 
-for i in `ls $pdfDir`; do
-   updateCats $i
+parallel -j 0 updateCats ::: `ls $pdfDir`
+
+for i in `ls $pdfDir`; do 
    cd $pdfDir/$i
    colo 7 
    echo -e "\n[$i]"
